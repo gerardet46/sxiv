@@ -1,5 +1,5 @@
-** Coses que he afegit **
-- La meva configuracio a `config`. Per copiar-la:
+**Coses que he afegit**
+- La meva configuracio a `config/`. Per copiar-la:
 ```bash
 mkdir ~/.config/sxiv
 cp -rv config/* ~/.config/sxiv/
