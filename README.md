@@ -1,3 +1,13 @@
+** Coses que he afegit **
+- La meva configuracio a `config`. Per copiar-la:
+```bash
+mkdir ~/.config/sxiv
+cp -rv config/* ~/.config/sxiv/
+```
+- Configurar colors i fonts a `config.h`
+- Afegir colors per la barra (en comptes d'invertir els predeterminats)
+
+
 ![sxiv](http://muennich.github.com/sxiv/img/logo.png "sxiv")
 
 **Simple X Image Viewer**
