@@ -22,18 +22,31 @@ rotate() {
 	done
 }
 
+# eliminar
+if [ "$1" = "r" ] && [ "$(printf "Sí\nNo" | dmenu -p "Eliminar imatge(s)?")" = "Sí" ]; then
+    while read file
+    do
+        rm -f "$file"
+    done
+elif [ "$1" = "d" ]; then
+    while read file
+    do
+        echo "$file"
+    done | dragon-drag-and-drop -x `xargs`
+fi
+
 while read file
 do
     fullpath="$(pwd)/$file"
+    [ "$(echo "$file" | cut -c1-1)" = "/" ] && fullpath="$file"
     case "$1" in
         "w")
-            ln -f "$fullpath" /home/gerry/.config/wallpaper
+            ln -f "$file" /home/gerry/.config/wallpaper
             feh --bg-fill ~/.config/wallpaper
             ;;
         "y")      echo -n "$fullpath" | xclip -in -selection clipboard ;;
         "c")      xclip -selection clipboard -target image/png "$file" ;;
-        "g")      tr '\n' '\0' | xargs -0 gimp & ;;
-        "d")      [ "$(printf "Sí\\nNo" | dmenu -p "Eliminar imatge?")" = "Sí" ] && rm "$file" ;;
+        "g")      gimp "$fullpath" & ;;
         "comma")  rotate 270 ;;
         "period") rotate  90 ;;
         "slash")  rotate 180 ;;

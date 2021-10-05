@@ -11,11 +11,13 @@ enum {
  * See X(7) section Resources and xrdb(1) for more information.
  */
 // colors
-static char* BG_WIN = "#21262b";
-static char* FG_WIN = "#a1a6ab";
-static char* BG_BAR = "#11161b";
-static char* FG_BAR = "#a1a6ab";
-static char* FONT   = "Ubuntu Mono:size=13";
+#include <gcolors.h>
+
+static char* BG_WIN = COL_BG_1;
+static char* FG_WIN = COL_W2;
+static char* BG_BAR = COL_BG_0;
+static char* FG_BAR = COL_W2;
+static char* FONT   = "Ubuntu:size=11";
 
 #endif
 #ifdef _IMAGE_CONFIG

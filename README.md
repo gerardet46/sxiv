@@ -6,6 +6,7 @@ cp -rv config/* ~/.config/sxiv/
 ```
 - Configurar colors i fonts a `config.h`
 - Afegir colors per la barra (en comptes d'invertir els predeterminats)
+- Ús de `gcolors` (veure el meu repositori) en comptes de XResources
 
 
 ![sxiv](http://muennich.github.com/sxiv/img/logo.png "sxiv")
